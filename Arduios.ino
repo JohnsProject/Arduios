@@ -3,7 +3,7 @@
  * by John´s Project
  * 
  * Arduios is like a operating system for the arduino, 
- * it enables you to use a sketch in different usecases, 
+ * it enables you to use a sketch in different use cases, 
  * without having to upload a new one every time.
  * 
  * You can easily write an app by including "kernel.h", 
