@@ -46,3 +46,6 @@ class TestApp: public App {
 To finish edit the Arduios file, by adding ``#include "TestApp.h"`` and ``testApp`` to the apps array.
 
 Congrats! you've just created your first Arduios app.
+
+# Screenshot
+![Screenshot](Screenshot.PNG "Screenshot of Arduios shell")
