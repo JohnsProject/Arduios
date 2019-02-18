@@ -1,5 +1,5 @@
 # Arduios
-Arduios is like a operating system for the arduino, it enables you to use a sketch in different usecases, without having to upload a new one every time.
+Arduios is like a operating system for the arduino, it enables you to use a sketch in different use cases, without having to upload a new one every time.
 
 ## Usage
 It's very simple to use the Arduios, as it has a simple shell app that enables you to communicate with it through the serial monitor of the Arduino IDE.
