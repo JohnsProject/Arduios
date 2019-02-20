@@ -1,6 +1,6 @@
 #include "kernel.h"
 
-struct Kernel kernel;
+Kernel kernel;
 
 void Kernel::setup(App *apps[]) {
   registry.appsCount = sizeof(apps) / sizeof(App);
