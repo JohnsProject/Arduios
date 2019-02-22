@@ -14,6 +14,7 @@ void Shell::setup() {
   Serial.println(F("|by John´s Project|"));
   Serial.println(F(" -----------------"));
   Serial.println(F("type help. for help!"));
+  Serial.print(F("# "));
 }
 
 void Shell::loop() {
@@ -21,20 +22,24 @@ void Shell::loop() {
   if (Serial.available() > 0) {
     content = Serial.readStringUntil('.');
     if (content.length() > 0) {
-      Serial.print(F("# "));
       Serial.println(content);
       if (content == F("help")) {
         Serial.println(F("commands: list., load:app_name."));
       }
       if (content == F("list")) {
-        for (uint8_t i = 1; i <= kernel.registry.appsCount; i++) {
+        if (kernel.registry.appsCount > 1) {
+          for (uint8_t i = 1; i <= kernel.registry.appsCount; i++) {
             Serial.println(kernel.registry.apps[i]->getName());
           }
+        } else {
+          Serial.println(F("No apps found"));
+        }
       }
       if (content.substring(0, 5) == F("load:")) {
         content.replace("load:", "");
         kernel.loadApp(content);
       }
+      Serial.print(F("# "));
     }
   }
 }
