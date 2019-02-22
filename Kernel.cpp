@@ -3,7 +3,7 @@
 Kernel kernel;
 
 void Kernel::setup(App *apps[]) {
-  registry.appsCount = sizeof(apps) / sizeof(App);
+  registry.appsCount = sizeof(apps) / sizeof(App)+1;
   registry.currentApp = 0;
   registry.apps = apps;
   registry.apps[registry.currentApp]->setup();
@@ -19,7 +19,7 @@ void Kernel::loadApp(uint8_t app_index) {
 }
 
 void Kernel::loadApp(String app_name) {
-  for (uint8_t i = 0; i <= registry.appsCount; i++) {
+  for (uint8_t i = 0; i < registry.appsCount; i++) {
     if (app_name == registry.apps[i]->getName()) {
       registry.currentApp = i;
       registry.apps[registry.currentApp]->setup();
