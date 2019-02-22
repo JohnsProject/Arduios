@@ -8,13 +8,10 @@ String Shell::getName() {
 
 void Shell::setup() {
   Serial.begin(9600);
-  Serial.println(F(" -----------------"));
-  Serial.println(F("|     Arduios     |"));
-  Serial.println(F("|    ---------    |"));
-  Serial.println(F("|by John´s Project|"));
-  Serial.println(F(" -----------------"));
+  Serial.println(F("---- Arduios ----"));
+  Serial.println(F("by John´s Project"));
+  Serial.println(F("-----------------"));
   Serial.println(F("type help. for help!"));
-  Serial.print(F("# "));
 }
 
 void Shell::loop() {
@@ -22,7 +19,7 @@ void Shell::loop() {
   if (Serial.available() > 0) {
     content = Serial.readStringUntil('.');
     if (content.length() > 0) {
-      Serial.println(content);
+      Serial.println("# " + content);
       if (content == F("help")) {
         Serial.println(F("commands: list., load:app_name."));
       }
@@ -39,7 +36,6 @@ void Shell::loop() {
         content.replace("load:", "");
         kernel.loadApp(content);
       }
-      Serial.print(F("# "));
     }
   }
 }
