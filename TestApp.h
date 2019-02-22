@@ -11,7 +11,7 @@ class TestApp: public App {
     
     String getName() {
       // return your apps name here
-      return "TestApp";
+      return F("TestApp");
     }
     
     void setup() {

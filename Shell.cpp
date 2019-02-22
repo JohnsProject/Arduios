@@ -27,11 +27,9 @@ void Shell::loop() {
         Serial.println(F("commands: list., load:app_name."));
       }
       if (content == F("list")) {
-        if (kernel.registry.appsCount > 1){
-          for (uint8_t i = 1; i <= kernel.registry.appsCount; i++) {
+        for (uint8_t i = 1; i <= kernel.registry.appsCount; i++) {
             Serial.println(kernel.registry.apps[i]->getName());
           }
-        }
       }
       if (content.substring(0, 5) == F("load:")) {
         content.replace("load:", "");
