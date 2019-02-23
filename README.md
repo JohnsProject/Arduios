@@ -47,5 +47,5 @@ To finish edit the Arduios file, by adding ``#include "TestApp.h"`` and ``testAp
 
 Congrats! you've just created your first Arduios app.
 
-# Screenshot
+## Screenshot
 ![Screenshot](Screenshot.PNG "Screenshot of Arduios shell")
