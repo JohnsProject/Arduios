@@ -19,7 +19,7 @@ void Kernel::loadApp(uint8_t app_index) {
 }
 
 void Kernel::loadApp(String app_name) {
-  for (uint8_t i = 0; i <= registry.appsCount; i++) {
+  for (uint8_t i = 0; i < registry.appsCount; i++) {
     if (app_name == registry.apps[i]->getName()) {
       registry.currentApp = i;
       registry.apps[registry.currentApp]->setup();
