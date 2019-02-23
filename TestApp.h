@@ -10,7 +10,7 @@
 class TestApp: public App {
     
     String getName() {
-      // return your apps name here
+      // return your app name here
       return F("TestApp");
     }
     

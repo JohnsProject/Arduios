@@ -23,12 +23,12 @@
 #include "Kernel.h"
 
 #include "Shell.h"
-#include "TestApp.h"
+//#include "TestApp.h"
 
 // the kernel will call the first app in the array when its loaded
 const App *apps[] = {
   &shell,
-  &testApp // uncomment to enable TestApp
+  //&testApp // uncomment to enable TestApp
 };
 
 void setup() {
