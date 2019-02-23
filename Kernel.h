@@ -31,7 +31,7 @@ extern struct Kernel {
   // method used to load an app from the registry by its name
   void loadApp(String app_name);
   // method called by the bootloader once when the kernel is loaded
-  void setup(App *apps[]);
+  void setup(App *apps[], uint8_t appsCount);
   // method constantly called by the bootloader
   void loop();
 } kernel;

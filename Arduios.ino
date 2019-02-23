@@ -28,11 +28,11 @@
 // the kernel will call the first app in the array when its loaded
 const App *apps[] = {
   &shell,
-  &testApp // uncomment to enable TestApp
-  };
+  //&testApp // uncomment to enable TestApp
+};
 
 void setup() {
-  kernel.setup(apps);
+  kernel.setup(apps, sizeof(apps) / sizeof(App));
 }
 
 void loop() {
