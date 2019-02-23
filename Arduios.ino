@@ -10,6 +10,10 @@
  * extending and implementing the methods of the App class
  * and registering it in the apps array here.
  * (App class is in "kernel.h") 
+ * 
+ * If you need docs just take a look into the '.h' files.
+ * ----------------------------------------------------------
+ * https://github.com/JohnsProject/Arduios
  * ----------------------------------------------------------
  * 
  * This is the bootloader of the Arduios, it loads the kernel 
