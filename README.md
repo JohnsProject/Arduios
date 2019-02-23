@@ -13,19 +13,22 @@ load:app_name. - loads an app from registry
 Note that theres alway a point behind them. This is needed because of the way the shell works.
 
 ## Creating your own apps
-It's also very simple to create your own apps using the Arduios.
+It's also very simple to create your own Arduios apps.
 
 First you need to download the repository, with that done, open the ``Arduios.ino`` file with the Arduino IDE.
 Now add a new file to the sketch called ``TestApp.h ``.
 
 This is how a basic Arduios app looks like
 ```c++
+#ifndef __TESTAPP_H_INCLUDED__
+#define __TESTAPP_H_INCLUDED__
+
 #include "Kernel.h"
 
 class TestApp: public App {
     
     String getName() {
-      // return your apps name here
+      // return your app name here
       return "TestApp";
     }
     
@@ -41,6 +44,8 @@ class TestApp: public App {
     }
     
 } testApp;
+
+#endif
 ```
 
 To finish edit the Arduios file, by adding ``#include "TestApp.h"`` and ``testApp`` to the apps array.
