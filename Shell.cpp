@@ -24,13 +24,11 @@ void Shell::loop() {
         Serial.println(F("commands: list., load:app_name."));
       }
       if (content == F("list")) {
-        if (kernel.registry.appsCount > 1) {
-          for (uint8_t i = 1; i < kernel.registry.appsCount; i++) {
-            Serial.println(kernel.registry.apps[i]->getName());
+        for (uint8_t i = 1; i < kernel.registry.MAX_APPS; i++) {
+            if(kernel.registry.apps[i] != NULL){
+              Serial.println(kernel.registry.apps[i]->getName());
+            }
           }
-        } else {
-          Serial.println(F("No apps found"));
-        }
       }
       if (content.substring(0, 5) == F("load:")) {
         content.replace("load:", "");

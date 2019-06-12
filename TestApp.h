@@ -16,12 +16,13 @@ class TestApp: public App {
     
     void setup() {
       // put your setup code here, to run once:
-      Serial.println("TestApp begin");
+      Serial.begin(9600);
+      Serial.println(F("TestApp begin"));
     }
     
     void loop() {
       // put your main code here, to run repeatedly:
-      Serial.println("TestApp loop");
+      Serial.println(F("TestApp loop"));
       delay(1000);
     }
     
