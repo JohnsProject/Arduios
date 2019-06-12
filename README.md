@@ -15,15 +15,14 @@ Note that theres alway a point behind them. This is needed because of the way th
 ## Creating your own apps
 It's also very simple to create your own Arduios apps.
 
-First you need to download the repository, with that done, open the ``Arduios.ino`` file with the Arduino IDE.
-Now add a new file to the sketch called ``TestApp.h ``.
+First you need to download the latest Arduios release, with that done, create a new sketch and add the ``Arduios.zip`` to the Arduino IDE libraries. Now add a new file to the sketch called ``TestApp.h ``.
 
 This is how a basic Arduios app looks like
 ```c++
 #ifndef __TESTAPP_H_INCLUDED__
 #define __TESTAPP_H_INCLUDED__
 
-#include "Kernel.h"
+#include <Arduios_Kernel.h>
 
 class TestApp: public App {
     
@@ -34,6 +33,7 @@ class TestApp: public App {
     
     void setup() {
       // put your setup code here, to run once:
+      Serial.begin(9600);
       Serial.println("TestApp begin");
     }
     
@@ -48,7 +48,22 @@ class TestApp: public App {
 #endif
 ```
 
-To finish edit the Arduios file, by adding ``#include "TestApp.h"`` and ``testApp`` to the apps array.
+To finish you need to add the app to the ``kernel`` and call the ``kernel.setup()`` and ``kernel.loop()`` methods.
+Your sketch should look like this:
+
+```c++
+#include <Arduios_Kernel.h>
+#include "TestApp.h"
+
+void setup() {
+  kernel.addApp(testApp);
+  kernel.setup();
+}
+
+void loop() {
+  kernel.loop();
+}
+```
 
 Congrats! you've just created your first Arduios app.
 
